@@ -80,7 +80,7 @@ def advice(req: AdviceRequest):
             contents=user_prompt,
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_ADVICE,
-                max_output_tokens=1024,
+                max_output_tokens=4096,
             ),
         )
         return {"advice": response.text}
@@ -134,7 +134,7 @@ def chat(req: ChatRequest):
             contents=contents,
             config=types.GenerateContentConfig(
                 system_instruction=system,
-                max_output_tokens=1024,
+                max_output_tokens=4096,
             ),
         )
         return {"reply": response.text}
